@@ -25,8 +25,11 @@ Auth::routes();
 
 // User Routes
 Route::middleware(['auth'])->group(function () {
+    Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
+    Route::put('/user/storeProfile', [UserController::class, 'storeProfile'])->name('user.storeProfile');
     Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
     Route::post('/pickup', [UserController::class, 'storePickup'])->name('user.storePickup');
+    Route::get('/pickup', [UserController::class, 'PickupForm'])->name('user.PickupForm');
 });
 
 // Admin Routes

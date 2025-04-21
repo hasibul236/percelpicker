@@ -92,39 +92,38 @@
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h4 class="card-title mb-0">Table</h4>
                         <p class="card-category mb-0">
-                            <a class="btn btn-primary" href="" role="button">Pickup New</a
+                            <a class="btn btn-primary" href="{{ route('user.PickupForm') }}" role="button">Pickup New</a
                             >
                             
                         </p>
                     </div>
                     <div class="card-body">
-                        <table class="table table-head-bg-success table-striped table-hover">
+                        <table class="table table-head-bg-primary table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
+                                    <th scope="col">Pickup Person</th>
+                                    <th scope="col">Location</th>
+                                    <th scope="col">Phone No</th>
+                                    <th scope="col">Weight</th>
+                                    <th scope="col">Cost</th>
+                                    <th scope="col">Percel Type</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
+                                @foreach ($pickupData as $index => $item)
+                                    <tr>
+                                        <td>{{ $index + 1 }}</td>
+                                        <td>{{ $item->reciever_name }}</td>
+                                        <td>{{ $item->pickup_location }}</td>
+                                        <td>{{ $item->phone }}</td>
+                                        <td>{{ $item->weight }}</td>
+                                        <td>{{ $item->rate }}</td>
+                                        <td>{{ $item->percel_type }}</td>
+                                    </tr>  
+                                @endforeach
+                                
+                                
                             </tbody>
                         </table>
                     </div>

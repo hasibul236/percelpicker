@@ -14,6 +14,8 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- Mix Scripts and Styles -->
+	<script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('theme/css/bootstrap.min.css') }}" >
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
@@ -54,7 +56,7 @@
 					<ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
 						
 						<li class="nav-item dropdown">
-							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="{{ asset('img/profile.jpg')}}" alt="user-img" width="36" class="img-circle"><span >{{ Auth::user()->name }}</span></span> </a>
+							<a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#" aria-expanded="false"> <img src="{{ auth()->user()->photo ? asset('storage/' . auth()->user()->photo) : asset('img/profile.jpg') }}"  alt="user-img" width="36" class="img-circle"><span >{{ Auth::user()->name }}</span></span> </a>
 							<ul class="dropdown-menu dropdown-user">
 								<li>
 									<div class="user-box">
@@ -87,7 +89,7 @@
 				<div class="scrollbar-inner sidebar-wrapper">
 					<div class="user">
 						<div class="photo">
-							<img src="{{ asset('img/profile.jpg')}}">
+							<img src="{{ auth()->user()->photo ? asset('storage/' . auth()->user()->photo) : asset('img/profile.jpg') }}"  alt="user-img" width="36" class="img-circle">
 						</div>
 						<div class="info">
 							<a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
@@ -107,7 +109,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#edit">
+										<a href="{{ route('user.profile') }}">
 											<span class="link-collapse">Edit Profile</span>
 										</a>
 									</li>
@@ -117,13 +119,13 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item active">
-							<a href="#">
+							<a href="{{ route('user.dashboard') }}">
 								<i class="la la-dashboard"></i>
 								<p>Dashboard</p>								
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="#">
+							<a href="{{ route('user.PickupForm') }}">
 								<i class="la la-table"></i>
 								<p>Pick Form</p>								
 							</a>
@@ -167,4 +169,15 @@
 <script src="{{ asset('theme/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
 <script src="{{ asset('theme/js/ready.min.js') }}"></script>
 <script src="{{ asset('theme/js/demo.js') }}"></script>
+<script>
+    function onScanSuccess(decodedText, decodedResult) {
+        document.getElementById('barcode').value = decodedText;
+        // Optional: Stop scanner after success
+        html5QrcodeScanner.clear();
+    }
+
+    var html5QrcodeScanner = new Html5QrcodeScanner(
+        "reader", { fps: 10, qrbox: 250 });
+    html5QrcodeScanner.render(onScanSuccess);
+</script>
 </html>

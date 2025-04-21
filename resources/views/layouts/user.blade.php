@@ -175,9 +175,9 @@
         // Optional: Stop scanner after success
         html5QrcodeScanner.clear();
     }
-
+	
     var html5QrcodeScanner = new Html5QrcodeScanner(
         "reader", { fps: 10, qrbox: 250 });
-    html5QrcodeScanner.render(onScanSuccess);
+    html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 </script>
 </html>

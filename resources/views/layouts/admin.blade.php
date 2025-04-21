@@ -13,6 +13,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+	<!-- DataTables CSS -->
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <!-- Mix Scripts and Styles -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('theme/css/bootstrap.min.css') }}" >
@@ -164,6 +166,7 @@
 	</div>	
 </div>
 </body>
+
 <script src="{{ asset('theme/js/core/jquery.3.2.1.min.js') }}"></script>
 <script src="{{ asset('theme/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('theme/js/core/popper.min.js') }}"></script>
@@ -178,4 +181,17 @@
 <script src="{{ asset('theme/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
 <script src="{{ asset('theme/js/ready.min.js') }}"></script>
 <script src="{{ asset('theme/js/demo.js') }}"></script>
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+		$('#percelTable').DataTable({
+			"paging": true,
+            "searching": true, 
+            "ordering": true
+		});
+    });
+</script>
+
 </html>

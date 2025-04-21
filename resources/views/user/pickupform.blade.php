@@ -71,7 +71,7 @@
 
                         <div class="mb-3">
                             <label class="form-label">Barcode</label>
-                            <input type="text" name="barcode" id="barcode" class="form-control" required>
+                            <input type="text" name="barcode" id="barcode" class="form-control" required readonly>
                         </div>
                         
                         <div id="reader" width="300px"></div>

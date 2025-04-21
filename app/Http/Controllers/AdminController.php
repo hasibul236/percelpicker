@@ -8,7 +8,9 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.dashboard');
+        $pickups = Pickup::all();
+
+        return view('admin.dashboard', compact('pickups'));
     }
 
     public function manageUsers()

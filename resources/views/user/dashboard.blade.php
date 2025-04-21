@@ -90,7 +90,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h4 class="card-title mb-0">Table</h4>
+                        <h4 class="card-title mb-0">Pickup Details</h4>
                         <p class="card-category mb-0">
                             <a class="btn btn-primary" href="{{ route('user.PickupForm') }}" role="button">Pickup New</a
                             >
@@ -98,7 +98,7 @@
                         </p>
                     </div>
                     <div class="card-body">
-                        <table class="table table-head-bg-primary table-striped table-hover">
+                        <table class="table table-head-bg-primary table-striped table-hover" id="percelTable">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>

@@ -21,3 +21,7 @@
     flex: 1;
     padding: 20px;
 }
+
+.dataTables_filter {
+    margin-bottom: 15px; /* Add spacing below the search box */
+}

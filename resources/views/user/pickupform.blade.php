@@ -28,7 +28,12 @@
 
                         <div class="mb-3">
                             <label class="form-label">Pickup Location/Sharee Center Name</label>
-                            <select class="form-select form-select-lg form-control" name="pickup_location" value="{{ old('pickup_location') }}" required>                    
+                            <input type="text" name="pickup_location" value="{{ old('pickup_location') }}" class="form-control" required>
+                            
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Company Name</label>
+                            <select class="form-select form-select-lg form-control" name="company_name" value="{{ old('company_name') }}" required>                    
                                 <option value="">Select One</option>
                                 <option value="Delhivery">Delhivery</option>
                                 <option value="Ecom Express">Ecom Express</option>
@@ -42,21 +47,20 @@
                                 <option value="Fedex">Fedex</option>
                             </select>
                         </div>
-
                         <div class="mb-3">
-                            <label class="form-label">Receiver Company Name</label>
+                            <label class="form-label">Pickup by</label>
                             <input type="text" name="reciever_name" value="{{ Auth::user()->name  }}" class="form-control" readonly>
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id  }}">
+                        </div>                        
+
+                        <div class="mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" name="phone" value="{{ Auth::user()->phone }}" class="form-control" required readonly>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Pincode</label>
                             <input type="number" name="pincode" value="{{ old('pincode') }}" class="form-control" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Phone</label>
-                            <input type="tel" name="phone" value="{{ Auth::user()->phone }}" class="form-control" required readonly>
                         </div>
 
                         <div class="mb-3">
@@ -77,8 +81,8 @@
                         <div id="reader" width="300px"></div>
 
                         <div class="mb-3">
-                            <label class="form-label">Parcel Type</label>
-                            <input type="text" name="percel_type" value="{{ old('percel_type') }}" class="form-control" required>
+                            <label class="form-label">Pickup Date</label>
+                            <input type="date" name="pickup_date" value="{{ date('Y-m-d') }}" class="form-control" readonly>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Submit Parcel</button>

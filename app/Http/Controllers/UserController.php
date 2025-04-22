@@ -60,13 +60,14 @@ class UserController extends Controller
         $validated = $request->validate([
             'user_id'         => 'required|exists:users,id',
             'pickup_location' => 'required|string|max:255',
+            'company_name'    => 'required|string|max:255',
             'reciever_name'   => 'required|string|max:255',
-            'pincode'         => 'required|integer',
             'phone'           => 'required|digits:10',
+            'pincode'         => 'required|integer',
             'rate'            => 'required|numeric',
             'weight'          => 'required|numeric',
             'barcode'         => 'required|string',
-            'percel_type'     => 'required|string',
+            'pickup_date'     => 'required|string',
         ]);
 
         // dd($request);

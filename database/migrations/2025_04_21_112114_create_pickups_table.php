@@ -17,13 +17,14 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->string('pickup_location');
+            $table->string('company_name');
             $table->string('reciever_name');
             $table->unsignedInteger('pincode');
             $table->string('phone');
             $table->decimal('rate', 8, 2);
             $table->decimal('weight', 8, 2);
             $table->string('barcode');
-            $table->string('percel_type');
+            $table->date('pickup_date');
             $table->timestamps();
         });
     }

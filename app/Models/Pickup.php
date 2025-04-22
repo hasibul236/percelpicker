@@ -12,12 +12,14 @@ class Pickup extends Model
         'user_id',
         'pickup_location',
         'reciever_name',
-        'pincode',
+        'company_name',
+        'reciever_name',
         'phone',
+        'pincode',
         'rate',
         'weight',
         'barcode',
-        'percel_type',
+        'pickup_date',
     ];
 
 }

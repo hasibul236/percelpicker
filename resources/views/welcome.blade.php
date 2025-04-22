@@ -2,25 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        {{-- <div class="content-wrapper d-flex flex-direction-row align-items-center justify-content-center">
-            <div class="section">
-                <h1>Efficient and Reliable Parcel Picking Services</h1>
-                <p>
-                With a strong focus on precision and speed, our Parcel Picker services are designed to streamline logistics operations for warehouses and distribution centers. 
-                Our dedicated professionals ensure that every package is picked accurately, handled with care, and prepared for timely dispatch. 
-                </p>
-                <p>
-                Whether you're managing high-volume shipments or need specialized item handling, we provide the reliability and attention to detail that your supply chain demands. 
-                Trust our experience in warehouse operations to keep your parcels moving efficiently and your customers satisfied.
-                </p>
-
-            </div>
-            <div class="section">
-                <img src="{{ asset('img/homepage.jpg') }}" class="img-fluid rounded-top" alt=""/>
-                
-            </div>
-        </div> --}}
+    <div class="row justify-content-center">        
         <section class="hero text-center">
             <div class="container">
               <div class="row align-items-center">

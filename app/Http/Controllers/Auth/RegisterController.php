@@ -27,7 +27,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -39,6 +40,15 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    protected function redirectTo()
+    {
+        // Check if the authenticated user is an admin or a regular user
+        if (auth()->user()->role === 'admin') {
+            return route('admin.dashboard'); // Redirect to admin dashboard
+        }
+
+        return route('user.dashboard'); // Redirect to user dashboard
+    }
     /**
      * Get a validator for an incoming registration request.
      *

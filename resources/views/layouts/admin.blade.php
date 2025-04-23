@@ -132,7 +132,7 @@
 						<li class="nav-item">                            
 							<a href="{{ route('admin.users') }}">
 								<i class="la la-users"></i>
-								<p>Add User</p>								
+								<p>All User Lists</p>								
 							</a>
 						</li>
 						<li class="nav-item">                            
@@ -140,8 +140,7 @@
 								<i class="la la-gift"></i>
 								<p>View All Pickups</p>								
 							</a>
-						</li>
-												
+						</li>						
 					</ul>
 				</div>
 			</div>

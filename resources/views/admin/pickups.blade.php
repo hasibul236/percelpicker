@@ -24,7 +24,7 @@
                                 <th scope="col">Phone No</th>
                                 <th scope="col">Weight</th>
                                 <th scope="col">Cost</th>
-                                <th scope="col">Percel Type</th>
+                                <th scope="col">Pickup Date</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -36,7 +36,7 @@
                                     <td>{{ $item->phone }}</td>
                                     <td>{{ $item->weight }}</td>
                                     <td>{{ $item->rate }}</td>
-                                    <td>{{ $item->percel_type }}</td>
+                                    <td>{{ $item->pickup_date }}</td>
                                 </tr>  
                             @endforeach
                             

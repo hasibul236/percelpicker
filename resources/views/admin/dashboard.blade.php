@@ -17,7 +17,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Users</p>
-                                    <h4 class="card-title">2</h4>
+                                    <h4 class="card-title">{{ $totalUsers }}</h4>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Sales</p>
-                                    <h4 class="card-title">$ 1,345</h4>
+                                    <h4 class="card-title">$ {{ $totalCost }}</h4>
                                 </div>
                             </div>
                         </div>
@@ -54,8 +54,8 @@
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Subscribers</p>
-                                    <h4 class="card-title">1303</h4>
+                                    <p class="card-category">Total Weight</p>
+                                    <h4 class="card-title">{{ $totalWeight }}</h4>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Order</p>
-                                    <h4 class="card-title">576</h4>
+                                    <h4 class="card-title">{{ $totalPercel}}</h4>
                                 </div>
                             </div>
                         </div>
@@ -105,6 +105,7 @@
                                     <th scope="col">Weight</th>
                                     <th scope="col">Cost</th>
                                     <th scope="col">Pickup Date</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -117,6 +118,11 @@
                                         <td>{{ $item->weight }}</td>
                                         <td>{{ $item->rate }}</td>
                                         <td>{{ $item->pickup_date }}</td>
+                                        <td>
+                                            <a href="{{ route('admin.downloadPdf', $item->id) }}" class="btn btn-danger mb-1" target="_blank" title="Download PDF">
+                                               <i class="la la-file-pdf-o" style="font-size:20px;"></i>
+                                            </a>
+                                        </td>
                                     </tr>  
                                 @endforeach
                                 

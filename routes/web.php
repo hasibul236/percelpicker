@@ -36,5 +36,8 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/users', [AdminController::class, 'manageUsers'])->name('admin.users');
+    Route::post('/admin/storeuser', [AdminController::class, 'storeUser'])->name('admin.storeUser');
     Route::get('/admin/pickups', [AdminController::class, 'viewPickups'])->name('admin.viewPickups');
+    Route::get('/admin/adduser', [AdminController::class, 'viewAddUser'])->name('admin.viewAddUser');
+    Route::get('/admin/downloadPdf/{id}', [AdminController::class, 'downloadPDF'])->name('admin.downloadPdf');
 });

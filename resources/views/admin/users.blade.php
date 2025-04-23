@@ -7,6 +7,13 @@
             
             <div class="col-md-12">
                 <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="card-title mb-0">All User Details</h4>
+                        <p class="card-category mb-0">
+                            <a class="btn btn-primary" href="{{ route('admin.viewAddUser') }}" role="button">Add New User</a>
+                            
+                        </p>
+                    </div>
                     <table class="table table-head-bg-primary table-striped table-hover">
                     <thead>
                         <tr>

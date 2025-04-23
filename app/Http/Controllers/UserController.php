@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pickup;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -73,5 +74,12 @@ class UserController extends Controller
         // dd($request);
         Pickup::create($validated);
         return redirect()->route('user.PickupForm')->with('success', 'Pickup request created successfully!');
+    }
+    public function downloadPDF($id)
+    {
+        $pickups = $pickup = Pickup::where('id', $id)->firstOrFail();
+        // dd($pickups);
+        $pdf = Pdf::loadView('user.invoice', compact('pickups'));
+        return $pdf->download('pickup-report.pdf');
     }
 }

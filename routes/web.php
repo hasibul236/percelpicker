@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'index'])->name('user.dashboard');
     Route::post('/pickup', [UserController::class, 'storePickup'])->name('user.storePickup');
     Route::get('/pickup', [UserController::class, 'PickupForm'])->name('user.PickupForm');
+    Route::get('/user/downloadPdf/{id}', [UserController::class, 'downloadPDF'])->name('user.downloadPdf');
 });
 
 // Admin Routes

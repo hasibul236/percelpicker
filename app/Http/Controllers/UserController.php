@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pickup;
+use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -10,10 +11,13 @@ class UserController extends Controller
 {
     public function index()
     {
-        $user       = auth()->user();
-        $pickupData = Pickup::where('user_id', $user->id)->get();
-
-        return view('user.dashboard', compact('pickupData'));
+        $user        = auth()->user();
+        $pickupData  = Pickup::where('user_id', $user->id)->get();
+        $totalUsers  = User::count();
+        $totalPercel = Pickup::where('user_id', $user->id)->count();
+        $totalCost   = Pickup::where('user_id', $user->id)->sum('rate');
+        $totalWeight = Pickup::where('user_id', $user->id)->sum('weight');
+        return view('user.dashboard', compact('pickupData', 'totalUsers', 'totalCost', 'totalPercel', 'totalWeight'));
     }
 
     public function profile()

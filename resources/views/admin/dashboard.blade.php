@@ -36,7 +36,7 @@
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
                                     <p class="card-category">Sales</p>
-                                    <h4 class="card-title">$ {{ $totalCost }}</h4>
+                                    <h4 class="card-title">₹ {{ $totalCost }}</h4>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-7 d-flex align-items-center">
                                 <div class="numbers">
-                                    <p class="card-category">Total Weight</p>
+                                    <p class="card-category">Total Weight(Kg)</p>
                                     <h4 class="card-title">{{ $totalWeight }}</h4>
                                 </div>
                             </div>
